@@ -15,4 +15,17 @@ public class GreetingController {
             model.addAttribute("result", result);
             return "greeting";
         }
+
+
+        @GetMapping("/minus")
+        public String minus(Model model,
+        @RequestParam(name = "third", defaultValue = "0") int c,
+        @RequestParam(name = "four", defaultValue = "0") int d) {
+            int result = c - d;
+            model.addAttribute("third", c);
+            model.addAttribute("four", d);
+            model.addAttribute("result", result);
+            return "minus";
+        }
 }
+
